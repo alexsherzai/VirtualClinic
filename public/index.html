@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./stylesheet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class="bg-info">
+    <div class="row">
+        <h1 class="col text-center">Neurobehavioral Assessment</h1>
+    </div>
+        <div class="row">
+            <div class="col text-center">
+                <button class="btn btn-success" onclick="generateRandomSelections()">Generate</button>
+                <h3>Diagnose:</h3>
+            </div>
+        </div>
+        <form action="/api/user" method="POST">
+        <div class="row">
+            <div class="col text-center">
+                <select class="form-control" name="diagnosis" id="diagnosis" ></select>
+                <button type="submit" class="btn btn-primary" onclick="submitForm()">Submit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col text-center border">
+                <h2 id="test">At Onset</h2>
+                <select class="form-control" name="onsetLivingSituation" id="onsetLivingSituation"></select>
+                <select class="form-control" name="onsetSymptoms" id="onsetSymptoms"></select>
+                <select class="form-control" name="onsetHow" id="onsetHow" multiple></select>
+                <select class="form-control" name="onsetHomeAndThoughts" id="onsetHomeAndThoughts" multiple></select>
+                <select class="form-control" name="onsetDriving" id="onsetDriving"></select>
+                <select class="form-control" name="onsetInappropriate" id="onsetInappropriate"></select>
+                <select class="form-control" name="onsetPersonality" id="onsetPersonality" multiple></select>
+                <select class="form-control" name="onsetWork" id="onsetWork" multiple></select>
+                <select class="form-control" name="onsetLost" id="onsetLost"></select>
+                <select class="form-control" name="onsetLanguage" id="onsetLanguage" multiple></select>
+                <select class="form-control" name="onsetDifficulty" id="onsetDifficulty" multiple></select>
+                <select class="form-control" name="onsetForgot" id="onsetForgot" multiple></select>
+                <select class="form-control" name="onsetWithdrawal" id="onsetWithdrawal" multiple></select>
+                <select class="form-control" name="onsetPosture" id="onsetPosture" multiple></select>
+                <select class="form-control" name="onsetAxatia" id="onsetAxatia" multiple></select>
+                <select class="form-control" name="onsetUrine" id="onsetUrine"></select>
+                <select class="form-control" name="onsetBowel" id="onsetBowel"></select>
+                <select class="form-control" name="onsetWeight" id="onsetWeight"></select>
+                <select class="form-control" name="onsetThoughts" id="onsetThoughts" multiple></select>
+                <select class="form-control" name="onsetHallucinations" id="onsetHallucinations" multiple></select>
+                <select class="form-control" name="onsetSenses" id="onsetSenses"></select>
+                <select class="form-control" name="onsetSymptomProg" id="onsetSymptomProg"></select>
+            </div>
+            <div class="col text-center border">
+                <h2>Current</h2>
+                <select class="form-control" name="currentLivingSituation" id="currentLivingSituation"></select>
+                <select class="form-control" name="currentSymptoms" id="currentSymptoms"></select>
+                <select class="form-control" name="currentHow" id="currentHow" multiple></select>
+                <select class="form-control" name="currentHomeAndThoughts" id="currentHomeAndThoughts" multiple></select>
+                <select class="form-control" name="currentDriving" id="currentDriving"></select>
+                <select class="form-control" name="currentInappropriate" id="currentInappropriate"></select>
+                <select class="form-control" name="currentPersonality" id="currentPersonality" multiple></select>
+                <select class="form-control" name="currentWork" id="currentWork" multiple></select>
+                <select class="form-control" name="currentLost" id="currentLost"></select>
+                <select class="form-control" name="currentLanguage" id="currentLanguage" multiple></select>
+                <select class="form-control" name="currentDifficulty" id="currentDifficulty" multiple></select>
+                <select class="form-control" name="currentForgot" id="currentForgot" multiple></select>
+                <select class="form-control" name="currentWithdrawal" id="currentWithdrawal" multiple></select>
+                <select class="form-control" name="currentPosture" id="currentPosture" multiple></select>
+                <select class="form-control" name="currentAxatia" id="currentAxatia" multiple></select>
+                <select class="form-control" name="currentUrine" id="currentUrine"></select>
+                <select class="form-control" name="currentBowel" id="currentBowel"></select>
+                <select class="form-control" name="currentWeight" id="currentWeight"></select>
+                <select class="form-control" name="currentThoughts" id="currentThoughts" multiple></select>
+                <select class="form-control" name="currentHallucinations" id="currentHallucinations" multiple></select>
+                <select class="form-control" name="currentSenses" id="currentSenses"></select>
+                <select class="form-control" name="currentSymptomProg" id="currentSymptomProg"></select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col left">
+                <div class="row">
+                    <h3 class="text-center">BADLs and IADLs: (Check means able)</h3>
+                </div>
+                <div class="row">
+                    <h5>Feeding</h5>
+                    <input class="form-check-input" type="checkbox" name="feeding" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Toileting</h5>
+                    <input class="form-check-input" type="checkbox" name="toileting" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Clothing</h5>
+                    <input class="form-check-input" type="checkbox" name="clothing" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Grooming</h5>
+                    <input class="form-check-input" type="checkbox" name="grooming" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Maintaining Continence</h5>
+                    <input class="form-check-input" type="checkbox" name="continence" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Bathing</h5>
+                    <input class="form-check-input" type="checkbox" name="bathing" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Walking and Transferring</h5>
+                    <input class="form-check-input" type="checkbox" name="walking" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Ability to Use Telephone</h5>
+                    <input class="form-check-input" type="checkbox" name="telephone" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Shopping</h5>
+                    <input class="form-check-input" type="checkbox" name="shopping" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Food Preparation</h5>
+                    <input class="form-check-input" type="checkbox" name="food-prep" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Housekeeping</h5>
+                    <input class="form-check-input" type="checkbox" name="housekeeping" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Laundry</h5>
+                    <input class="form-check-input" type="checkbox" name="laundry" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Mode of Transportation</h5>
+                    <input class="form-check-input" type="checkbox" name="transporation" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Responsibility for own medications</h5>
+                    <input class="form-check-input" type="checkbox" name="medications" id="flexCheckDefault">
+                </div>
+                <div class="row">
+                    <h5>Ability to handle Finance</h5>
+                    <input class="form-check-input" type="checkbox" name="finance" id="flexCheckDefault">
+                </div>
+            </div>
+            <div class="col">
+                <h3 class="text-center">Demographics:</h3>
+                <h5>Age: <input type="text" name="age" id="age"></input></h5>
+                <select name="sex" class="form-control" id="sex">
+                    <option name="male">Male</option>
+                    <option name="female">Female</option>
+                </select>
+                <select name="education" class="form-control" id="education"></select>
+                <select name="race" class="form-control" id="race"></select>
+            </div>
+            <div class="col">
+                <h3 class="text-center">Comorbidities:</h3>
+                <select name="comorbidities" class="form-control" id="comorbidities" multiple></select>
+            </div>
+        </div>
+    </form>
+
+    <script src="./questionaire.js"></script>
+</body>
+</html>

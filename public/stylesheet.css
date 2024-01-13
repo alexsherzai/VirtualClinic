@@ -1,0 +1,13 @@
+.border {
+    border: solid 1px white;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.form-control {
+    margin-bottom: 5px;
+}
+
+.left {
+    margin-left: 50px;
+}
